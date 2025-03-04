@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
 import { Button } from "@/components/ui/button";
+import PowerBIThemeGenerator from "./components/PowerBIThemeGenerator";
+
+function App() {
+  return (
+    <div className="App">
+      <PowerBIThemeGenerator />
+    </div>
+  );
+}
+
+export default App;
 
 export default function PowerBIThemeGenerator() {
   const [colors, setColors] = useState(["#1f77b4", "#ff7f0e", "#2ca02c"]);
