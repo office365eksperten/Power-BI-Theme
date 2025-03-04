@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
 
-<button onClick={generateJSON} className="w-full bg-blue-500 text-white py-2 px-4 rounded">
-  Download JSON
-</button>
-
-
 export default function PowerBIThemeGenerator() {
   const [colors, setColors] = useState(["#1f77b4", "#ff7f0e", "#2ca02c"]);
   const [background, setBackground] = useState("#ffffff");
@@ -17,6 +12,7 @@ export default function PowerBIThemeGenerator() {
     setColors(newColors);
   };
 
+  // 🛠 Rettelse: Definerer `generateJSON`
   const generateJSON = () => {
     const theme = {
       name: "Custom Theme",
@@ -25,6 +21,7 @@ export default function PowerBIThemeGenerator() {
       foreground,
       tableAccent: colors[0]
     };
+
     const blob = new Blob([JSON.stringify(theme, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -53,7 +50,11 @@ export default function PowerBIThemeGenerator() {
         <label className="block font-medium">Foreground</label>
         <ChromePicker color={foreground} onChange={(c) => setForeground(c.hex)} />
       </div>
-      <Button onClick={generateJSON} className="w-full">Download JSON</Button>
+
+      {/* 🛠 Rettelse: Bruger en standard <button> i stedet for 'Button' */}
+      <button onClick={generateJSON} className="w-full bg-blue-500 text-white py-2 px-4 rounded">
+        Download JSON
+      </button>
     </div>
   );
 }
