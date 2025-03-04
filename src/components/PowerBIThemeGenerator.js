@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
-import { Button } from "../ui/button";  // Relativ sti
+
+<button onClick={generateJSON} className="w-full bg-blue-500 text-white py-2 px-4 rounded">
+  Download JSON
+</button>
+
 
 export default function PowerBIThemeGenerator() {
   const [colors, setColors] = useState(["#1f77b4", "#ff7f0e", "#2ca02c"]);
